@@ -54,7 +54,7 @@ async def create_menu(
     db.add(menu)
     db.commit()
     db.refresh(menu)
-    return {menu}
+    return {"id": menu.id, "title": menu.title, "description": menu.description}
 
 
 @router.patch("/api/v1/menus/{target_menu_id}")
